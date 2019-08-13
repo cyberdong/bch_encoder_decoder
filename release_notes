@@ -1,0 +1,11 @@
+V1.0 - Initial Release
+
+V2.0 - The first release exhibited a bug in the Berlekamp-Massey Algorithm.  Under rare conditions
+the algorithm would report that the codeword was uncorrectable even when it had fewer errors
+than the correction power of the code.  The bug was a function of the error pattern itself and
+could be detected by examining the syndromes.  This release of the software contains a data file
+that can be piped into the bch_decoder to show the error.  To do this, execute the following command:
+	bch_decoder -k 4096 -m 13 -t 8 -p 8 < bug_data_pattern
+
+
+V2.1 - Makefile added, test script modified, minor code changes by Daniel Liu
